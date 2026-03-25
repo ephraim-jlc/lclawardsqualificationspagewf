@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qualifications & Certification | LCL Awards — Wireframe</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── WIREFRAME PALETTE ── */
+  :root {
+    --bg:        #F4F4F4;
+    --bg-mid:    #EBEBEB;
+    --bg-dark:   #D8D8D8;
+    --bg-darker: #C4C4C4;
+    --panel:     #FFFFFF;
+    --panel-alt: #EEEEEE;
+    --stroke:    #CCCCCC;
+    --stroke-mid:#BBBBBB;
+    --text-dark: #1A1A1A;
+    --text-mid:  #555555;
+    --text-light:#888888;
+    --text-placeholder: #AAAAAA;
+    --header-bg: #2E2E2E;
+    --footer-bg: #3A3A3A;
+    --label-bg:  #E0E0E0;
+    --btn-primary: #444444;
+    --btn-secondary: #777777;
+    --tag-bg:    #E8E8E8;
+    --section-dark: #3D3D3D;
+    --section-mid:  #4D4D4D;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--bg);
+    overflow-x: hidden;
+  }
+
+  /* ── WIREFRAME ANNOTATION ── */
+  .wf-label {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    background: var(--label-bg);
+    border: 1px dashed var(--stroke-mid);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    margin-bottom: 0.6rem;
+  }
+  .wf-placeholder {
+    background: var(--bg-dark);
+    border: 2px dashed var(--stroke-mid);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-placeholder);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── HEADER — LCL style ── */
+  .site-header {
+    background: var(--header-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 70px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  /* Hexagon logo mark */
+  .logo-hex {
+    width: 42px;
+    height: 42px;
+    background: #555;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-hex-inner {
+    width: 28px;
+    height: 28px;
+    background: #777;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-hex-text {
+    font-size: 0.45rem;
+    font-weight: 800;
+    color: #ccc;
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .logo-wordmark {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #CCCCCC;
+    letter-spacing: 0.04em;
+  }
+  .logo-wordmark span {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: #888;
+    display: block;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .header-social {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .social-icon {
+    width: 28px; height: 28px;
+    background: #555;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: #999;
+    font-weight: 700;
+  }
+  .header-nav {
+    background: var(--header-bg);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .header-nav a {
+    display: inline-block;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #AAAAAA;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .header-nav a:hover { color: #DDDDDD; }
+  .header-nav a.active {
+    color: #DDDDDD;
+    border-bottom-color: #888;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--section-dark);
+    padding: 5rem 2.5rem 5.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: 'HERO BANNER IMAGE PLACEHOLDER';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 12px,
+      rgba(255,255,255,0.02) 12px,
+      rgba(255,255,255,0.02) 24px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.1);
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #AAAAAA;
+    background: rgba(255,255,255,0.07);
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+    border: 1px dashed #666;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    color: #E0E0E0;
+    line-height: 1.15;
+    max-width: 700px;
+    margin-bottom: 1.25rem;
+  }
+  .hero-intro {
+    color: #999;
+    font-size: 1rem;
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+  .cta-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 580px;
+    margin-bottom: 3rem;
+  }
+  .cta-card {
+    background: rgba(255,255,255,0.06);
+    border: 2px dashed #666;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+  }
+  .cta-card-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 0.3rem;
+  }
+  .cta-card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #CCC;
+    margin-bottom: 0.2rem;
+  }
+  .cta-card-sub { font-size: 0.78rem; color: #666; }
+  .trust-strip {
+    padding-top: 2rem;
+    border-top: 1px dashed #555;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .trust-strip-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #666;
+  }
+  .trust-badge {
+    background: rgba(255,255,255,0.05);
+    border: 1px dashed #555;
+    border-radius: 4px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #888;
+  }
+
+  /* ── SHARED ── */
+  .section { padding: 5rem 2.5rem; }
+  .container { max-width: 1160px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-title--light { color: #E0E0E0; }
+  .section-rule {
+    width: 36px; height: 3px;
+    background: var(--bg-darker);
+    border-radius: 2px;
+    margin-bottom: 1.75rem;
+  }
+  .divider { border: none; border-top: 1px solid var(--stroke); }
+  .btn {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    border-radius: 5px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary { background: var(--btn-primary); color: white; border: none; }
+  .btn-secondary { background: transparent; color: #CCC; border: 2px dashed #666; }
+  .btn-lg { padding: 0.8rem 1.75rem; font-size: 0.9rem; }
+
+  /* ── CONTEXT BLOCK ── */
+  .context-block { background: var(--panel); }
+  .context-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+    align-items: start;
+  }
+  .context-prose p {
+    color: var(--text-mid);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.75;
+  }
+  .context-sidebar {
+    background: var(--panel-alt);
+    border: 1px dashed var(--stroke-mid);
+    border-radius: 10px;
+    padding: 1.75rem;
+  }
+  .context-sidebar h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+  }
+  .sector-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    border: 1px solid var(--stroke);
+    border-radius: 3px;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    margin: 0.2rem;
+  }
+  .sidebar-who {
+    border-top: 1px solid var(--stroke);
+    padding-top: 1.1rem;
+    margin-top: 1.1rem;
+  }
+  .sidebar-who .section-eyebrow { margin-bottom: 0.4rem; }
+  .sidebar-who p { font-size: 0.8rem; color: var(--text-mid); line-height: 1.6; }
+
+  /* ── WHY BLOCK ── */
+  .why-block { background: var(--section-dark); padding: 5rem 2.5rem; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .why-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px dashed #555;
+    border-radius: 10px;
+    padding: 1.75rem;
+  }
+  .why-card .big-num {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #888;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .why-card h4 { font-size: 0.9rem; font-weight: 600; color: #CCC; margin-bottom: 0.4rem; }
+  .why-card p { font-size: 0.8rem; color: #777; line-height: 1.6; }
+
+  /* ── TRUST BLOCK ── */
+  .trust-block { background: var(--bg-mid); }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4.5rem;
+    align-items: start;
+    margin-top: 2.5rem;
+  }
+  .trust-prose p {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    margin-bottom: 1rem;
+    line-height: 1.75;
+  }
+  .accred-cards { display: flex; flex-direction: column; gap: 0.85rem; }
+  .accred-card {
+    background: var(--panel);
+    border: 1px solid var(--stroke);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .accred-icon {
+    width: 38px; height: 38px;
+    background: var(--bg-dark);
+    border: 1px dashed var(--stroke-mid);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    color: var(--text-light);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .accred-card h4 { font-size: 0.82rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.15rem; }
+  .accred-card p { font-size: 0.75rem; color: var(--text-light); line-height: 1.4; }
+
+  /* ── CATEGORIES ── */
+  .categories-block { background: var(--section-mid); padding: 5rem 2.5rem; }
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .cat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px dashed #666;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .cat-card:hover { background: rgba(255,255,255,0.09); }
+  .cat-img-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background: repeating-linear-gradient(
+      -45deg,
+      #555,
+      #555 6px,
+      #606060 6px,
+      #606060 12px
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+  .cat-img-placeholder-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    background: rgba(0,0,0,0.25);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+  }
+  .cat-img-placeholder-dims {
+    font-size: 0.55rem;
+    color: rgba(255,255,255,0.2);
+    font-weight: 600;
+  }
+  .cat-card-body {
+    padding: 1.1rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .cat-card h3 { font-size: 0.85rem; font-weight: 700; color: #CCC; margin-bottom: 0.3rem; line-height: 1.3; }
+  .cat-card p { font-size: 0.76rem; color: #888; flex: 1; line-height: 1.55; margin-bottom: 0.75rem; }
+  .cat-link { font-size: 0.74rem; font-weight: 700; color: #AAA; letter-spacing: 0.04em; }
+  .cat-card-special { background: rgba(255,255,255,0.07) !important; }
+
+  /* ── CENTRES BLOCK ── */
+  .centres-block { background: var(--section-dark); padding: 5rem 2.5rem; }
+  .centres-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+  .benefit-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.85rem;
+    text-align: left;
+    margin: 2rem 0 2.5rem;
+  }
+  .benefit-tile {
+    background: rgba(255,255,255,0.04);
+    border: 1px dashed #555;
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+  }
+  .benefit-tile .check { color: #888; font-size: 0.9rem; margin-bottom: 0.4rem; font-weight: 700; }
+  .benefit-tile p { font-size: 0.82rem; color: #AAA; line-height: 1.5; }
+  .btn-row { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FEATURED QUALS CAROUSEL ── */
+  .featured-block { background: var(--panel); }
+  .carousel-wrapper {
+    position: relative;
+    margin-top: 2.5rem;
+  }
+  .carousel-track-outer {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .carousel-track {
+    display: flex;
+    gap: 1.1rem;
+    transition: transform 0.35s ease;
+  }
+  .qual-card {
+    background: var(--bg);
+    border: 1px solid var(--stroke);
+    border-radius: 10px;
+    padding: 1.5rem;
+    flex: 0 0 calc(33.333% - 0.75rem);
+    min-width: 0;
+  }
+  .qual-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    border: 1px solid var(--stroke);
+    border-radius: 3px;
+    padding: 0.18rem 0.5rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.85rem;
+  }
+  .qual-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; line-height: 1.35; }
+  .qual-card p { font-size: 0.8rem; color: var(--text-mid); line-height: 1.55; margin-bottom: 1rem; }
+  .qual-link { font-size: 0.78rem; font-weight: 700; color: var(--text-light); text-decoration: none; }
+  .qual-link::after { content: ' →'; }
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .carousel-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--bg-dark);
+    border: 1px solid var(--stroke-mid);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .carousel-dot.active { background: var(--btn-primary); }
+  .carousel-arrows { display: flex; gap: 0.5rem; }
+  .carousel-arrow {
+    width: 38px; height: 38px;
+    background: var(--panel);
+    border: 1px solid var(--stroke);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    cursor: pointer;
+    font-weight: 700;
+    user-select: none;
+    transition: background 0.15s;
+  }
+  .carousel-arrow:hover { background: var(--bg-mid); }
+  .carousel-count {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-light);
+  }
+  @media (max-width: 900px) {
+    .qual-card { flex: 0 0 calc(50% - 0.55rem); }
+  }
+  @media (max-width: 600px) {
+    .qual-card { flex: 0 0 100%; }
+  }
+
+  /* ── INTERNAL LINKS ── */
+  .links-block { background: var(--bg-mid); }
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .link-tile {
+    background: var(--panel);
+    border: 1px dashed var(--stroke-mid);
+    border-radius: 8px;
+    padding: 1.4rem;
+    text-decoration: none;
+    display: block;
+    transition: background 0.15s;
+  }
+  .link-tile:hover { background: var(--bg-dark); }
+  .link-tile-icon {
+    width: 30px; height: 30px;
+    background: var(--bg-dark);
+    border: 1px dashed var(--stroke-mid);
+    border-radius: 5px;
+    margin-bottom: 0.7rem;
+  }
+  .link-tile-title { font-size: 0.85rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem; }
+  .link-tile-desc { font-size: 0.76rem; color: var(--text-light); line-height: 1.5; }
+
+  /* ── FAQ ── */
+  .faq-block { background: var(--panel); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 2.5rem;
+    border: 1px solid var(--stroke);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--stroke);
+  }
+  .faq-item { background: var(--panel); padding: 1.5rem 1.75rem; }
+  .faq-item h4 { font-size: 0.87rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; line-height: 1.4; }
+  .faq-item p { font-size: 0.8rem; color: var(--text-mid); line-height: 1.65; }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--section-dark);
+    padding: 5.5rem 2.5rem;
+    text-align: center;
+  }
+  .final-cta h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 700; color: #E0E0E0; margin-bottom: 0.85rem; }
+  .final-cta p { color: #888; font-size: 0.95rem; max-width: 500px; margin: 0 auto 2.25rem; line-height: 1.7; }
+  .final-btns { display: flex; justify-content: center; gap: 0.85rem; flex-wrap: wrap; }
+
+  /* ── FOOTER — LCL style ── */
+  .site-footer {
+    background: var(--footer-bg);
+  }
+  .footer-main {
+    padding: 3.5rem 2.5rem 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-logo-hex {
+    width: 60px; height: 60px;
+    background: #555;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  .footer-logo-inner {
+    width: 40px; height: 40px;
+    background: #777;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-logo-text {
+    font-size: 0.5rem;
+    font-weight: 800;
+    color: #BBB;
+    line-height: 1.1;
+    text-align: center;
+  }
+  .footer-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 2.25rem;
+    flex-wrap: wrap;
+  }
+  .footer-contact a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #BBBBBB;
+    text-decoration: none;
+  }
+  .footer-contact a.email { color: #999; text-decoration: underline; }
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-bottom: 2.25rem;
+  }
+  .footer-nav a {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    padding: 0.3rem 1.25rem;
+    border-right: 1px solid #555;
+  }
+  .footer-nav a:last-child { border-right: none; }
+  .footer-address {
+    font-size: 0.8rem;
+    color: #777;
+    line-height: 1.7;
+  }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    font-size: 0.75rem;
+    color: #666;
+  }
+  .footer-bottom-left { display: flex; align-items: center; gap: 0.75rem; }
+  .footer-cookie-icon {
+    width: 22px; height: 22px;
+    background: #555;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    color: #888;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .footer-bottom-right { display: flex; gap: 1.25rem; }
+  .footer-bottom-right a { color: #666; text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .cta-split, .context-grid, .trust-grid { grid-template-columns: 1fr; }
+    .why-grid, .featured-grid { grid-template-columns: 1fr 1fr; }
+    .links-grid { grid-template-columns: 1fr 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .header-nav { overflow-x: auto; }
+  }
+  @media (max-width: 600px) {
+    .why-grid, .featured-grid, .links-grid { grid-template-columns: 1fr; }
+    .categories-grid { grid-template-columns: 1fr 1fr; }
+    .footer-contact { flex-direction: column; gap: 0.75rem; }
+    .footer-nav a { padding: 0.3rem 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <div class="header-top">
+    <div class="header-logo">
+      <div style="width:42px; height:42px; background:#555; border:2px dashed #888; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:0.55rem; font-weight:700; color:#999; letter-spacing:0.04em; text-align:center; line-height:1.3; flex-shrink:0;">LOGO</div>
+      <div class="logo-wordmark">LCL Awards<span>Awarding Organisation</span></div>
+    </div>
+    <div class="header-social">
+      <div class="social-icon">⌂</div>
+      <div class="social-icon">f</div>
+      <div class="social-icon">𝕏</div>
+      <div class="social-icon">in</div>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <a href="#">Learner Zone</a>
+    <a href="#">Centre Zone</a>
+    <a href="#" class="active">Qualifications</a>
+    <a href="#">Inclusivity</a>
+    <a href="#">Contact Us</a>
+    <a href="#">About Us</a>
+    <a href="#">News</a>
+  </nav>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Building Services Engineering Qualifications, Regulated by Ofqual, Qualifications Wales &amp; CCEA</div>
+    <h1>Qualifications &amp; Certification</h1>
+    <p class="hero-intro">LCL Awards is a leading awarding organisation for the building services engineering sector, delivering nationally recognised qualifications across sectors, including gas, electrical, plumbing, renewables and refrigeration. We deliver our qualifications through a network of approved training centres across the UK.</p>
+
+    <div class="cta-split">
+      <div class="cta-card">
+        <div class="cta-card-label">Are You A Learner?</div>
+        <div class="cta-card-title">Find a qualification</div>
+        <div class="cta-card-sub">Browse by sector →</div>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-label">Run A Training Centre?</div>
+        <div class="cta-card-title">Offer LCL qualifications</div>
+        <div class="cta-card-sub">Become approved →</div>
+      </div>
+    </div>
+
+    <div class="trust-strip">
+      <span class="trust-strip-label">Accredited &amp; Regulated</span>
+      <span class="trust-badge">UKAS Accredited No. 0230</span>
+      <span class="trust-badge">Ofqual Regulated</span>
+      <span class="trust-badge">Qualifications Wales</span>
+      <span class="trust-badge">CCEA Regulation</span>
+      <span class="trust-badge">ISO/IEC 17024:2012</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHAT WE COVER ══ -->
+<section class="section context-block">
+  <div class="container">
+    <div class="context-grid">
+      <div class="context-prose">
+        <div class="section-eyebrow">What We Cover</div>
+        <h2 class="section-title">Qualifications crafted for the building services engineering sector</h2>
+        <div class="section-rule"></div>
+        <p>Building services engineering qualifications underpin the technical standards required to work safely and competently across domestic and commercial heating, gas, electrical, plumbing, and renewable energy systems. From initial entry-level awards to advanced professional certification, these qualifications ensure those in the trades meet the regulatory requirements of their sector.</p>
+        <p>LCL Awards develops and awards qualifications that are aligned with industry standards, employer expectations, and regulatory requirements. We cover the full breadth of the building services sector – from those new to the industry to those looking to upskill, requalify, or expand their provision, LCL Awards offers the right qualification pathways to help you progress.</p>
+        <p>All qualifications are delivered exclusively through LCL Awards' network of approved training centres, ensuring national consistency and local access to training.</p>
+      </div>
+      <div class="context-sidebar">
+        <h4>Sectors covered by LCL Awards</h4>
+        <div style="margin-bottom:0;">
+          <span class="sector-tag">Gas</span>
+          <span class="sector-tag">Electrical</span>
+          <span class="sector-tag">Plumbing</span>
+          <span class="sector-tag">Heating</span>
+          <span class="sector-tag">Renewables</span>
+          <span class="sector-tag">Oil</span>
+          <span class="sector-tag">Heating Design</span>
+          <span class="sector-tag">Gas Safety Management &amp; Auditing</span>
+          <span class="sector-tag">Smart Metering</span>
+          <span class="sector-tag">Solid Fuel &amp; Biomass</span>
+          <span class="sector-tag">Refrigeration &amp; F-Gas</span>
+        </div>
+        <div class="sidebar-who">
+          <div class="section-eyebrow">Who qualifications are for</div>
+          <p>New entrants entering the trades, experienced engineers maintaining compliance or gaining new skills, and training businesses building their qualification portfolio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══ WHY LCL ══ -->
+<section class="why-block">
+  <div class="container">
+    <div class="section-eyebrow" style="color:#888;">Why LCL Awards</div>
+    <h2 class="section-title section-title--light">The awarding organisation for building services</h2>
+    <p style="color:#888; max-width:540px; font-size:0.9rem; line-height:1.7;">With decades of sector experience and a nationwide delivery network, LCL Awards is one of the most established awarding organisations in the UK building services sector.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="big-num">160+</div>
+        <h4>Approved training centres</h4>
+        <p>A nationwide network of approved centres delivering LCL Awards qualifications across England, Wales and Northern Ireland.</p>
+      </div>
+      <div class="why-card">
+        <div class="big-num">12</div>
+        <h4>Qualification sectors covered</h4>
+        <p>Comprehensive portfolio spanning the full breadth of building services engineering, from gas and electrical to renewables and refrigeration.</p>
+      </div>
+      <div class="why-card">
+        <div class="big-num">20+</div>
+        <h4>Years in the sector</h4>
+        <p>Decades of experience developing and awarding qualifications that industry trusts and employers recognise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACCREDITATION ══ -->
+<section class="section trust-block">
+  <div class="container">
+    <div class="section-eyebrow">Accreditation &amp; Regulation</div>
+    <h2 class="section-title">Trusted. Regulated. Recognised.</h2>
+    <div class="section-rule"></div>
+    <div class="trust-grid">
+      <div class="trust-prose">
+        <p>LCL Awards is accredited by UKAS (The United Kingdom Accreditation Service) under accreditation number 0230, against the internationally recognised standard BS EN ISO/IEC 17024:2012 for conformity assessment bodies operating certification of persons. This accreditation confirms that LCL Awards operates to the highest standards of impartiality, competence and consistent service delivery.</p>
+        <p>In addition to UKAS accreditation, LCL Awards qualifications are regulated by Ofqual in England, Qualifications Wales in Wales, and CCEA Regulation in Northern Ireland. This ensures that all LCL Awards qualifications sit on the national qualifications frameworks and carry the same regulatory weight as qualifications from any other regulated awarding organisation.</p>
+        <p>For learners, this means qualifications that are genuinely portable and recognised by employers, industry bodies and licensing schemes across the UK. For training centres, it means operating within a quality assurance framework that is transparent, consistent and independently verified.</p>
+        <a href="#" class="btn btn-primary" style="margin-top:1.25rem; display:inline-block;">Learn More About the Organisations We Work With</a>
+      </div>
+      <div class="accred-cards">
+        <div class="accred-card">
+          <div class="accred-icon">ICON</div>
+          <div>
+            <h4>UKAS Accredited — No. 0230</h4>
+            <p>United Kingdom Accreditation Service, conformity assessment body for certification of persons.</p>
+          </div>
+        </div>
+        <div class="accred-card">
+          <div class="accred-icon">ICON</div>
+          <div>
+            <h4>BS EN ISO/IEC 17024:2012</h4>
+            <p>International standard for competence, consistent operation and impartiality of certification bodies.</p>
+          </div>
+        </div>
+        <div class="accred-card">
+          <div class="accred-icon">ICON</div>
+          <div>
+            <h4>Ofqual Regulated</h4>
+            <p>Qualifications regulated by the Office of Qualifications and Examinations Regulation in England.</p>
+          </div>
+        </div>
+        <div class="accred-card">
+          <div class="accred-icon">ICON</div>
+          <div>
+            <h4>Qualifications Wales &amp; CCEA</h4>
+            <p>Regulated in Wales by Qualifications Wales and in Northern Ireland by CCEA Regulation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUALIFICATION CATEGORIES ══ -->
+<section class="categories-block">
+  <div class="container">
+    <div class="section-eyebrow" style="color:#888;">Qualification Categories</div>
+    <h2 class="section-title section-title--light">Browse by sector</h2>
+    <p style="color:#888; max-width:560px; font-size:0.9rem; line-height:1.7;">LCL Awards offers a comprehensive portfolio of building services engineering qualifications, each category structured to support learners at every stage of their career.</p>
+    <div class="categories-grid">
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Gas Qualifications</h3>
+          <p>Domestic and commercial gas qualifications including CCN1, CPA1 and specialist appliance pathways.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Electrical Qualifications</h3>
+          <p>Electrical installation and inspection qualifications aligned with BS 7671 wiring regulations.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Plumbing Qualifications</h3>
+          <p>Plumbing and domestic heating qualifications covering installation, maintenance and commissioning.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Heating Qualifications</h3>
+          <p>Heating system design, installation and maintenance qualifications for residential and commercial engineers.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Renewables Qualifications</h3>
+          <p>Qualifications covering heat pumps, solar thermal, solar PV and other renewable energy technologies.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Oil Qualifications</h3>
+          <p>Oil firing competence qualifications for engineers working with domestic and commercial oil-fired appliances.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Refrigeration &amp; F-Gas</h3>
+          <p>F-Gas Category I and II qualifications and refrigeration system competence certifications.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Smart Metering</h3>
+          <p>Smart meter installation qualifications for domestic and small business energy meter deployment.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Solid Fuel &amp; Biomass</h3>
+          <p>Solid fuel and biomass heating qualifications covering installation and commissioning of appliances.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Heating Design</h3>
+          <p>Heat loss calculation and heating system design qualifications for engineers and specifiers.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card">
+        <div class="cat-img-placeholder"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Gas Safety Management</h3>
+          <p>Gas safety management and auditing qualifications for those responsible for gas safety in organisations.</p>
+          <span class="cat-link">View qualifications →</span>
+        </div>
+      </a>
+      <a href="#" class="cat-card cat-card-special">
+        <div class="cat-img-placeholder" style="background: repeating-linear-gradient(-45deg,#5a5a5a,#5a5a5a 6px,#656565 6px,#656565 12px);"><span class="cat-img-placeholder-label">Image</span><span class="cat-img-placeholder-dims">3:2 ratio</span></div>
+        <div class="cat-card-body">
+          <h3>Not sure where to start?</h3>
+          <p>Use our qualification finder to identify the right pathway for your role, experience and sector.</p>
+          <span class="cat-link">Use qualification finder →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POPULAR QUALIFICATIONS CAROUSEL ══ -->
+<section class="section featured-block">
+  <div class="container">
+    <div class="section-eyebrow">Popular Qualifications</div>
+    <h2 class="section-title">Popular Qualifications</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="qual-card">
+            <span class="qual-tag">Gas</span>
+            <h4>CCN1 – Core Domestic Gas Safety</h4>
+            <p>The foundational qualification for domestic gas engineers. Required for Gas Safe Register registration and underpins all domestic gas appliance pathways.</p>
+            <a href="#" class="qual-link">View qualification</a>
+          </div>
+          <div class="qual-card">
+            <span class="qual-tag">Renewables</span>
+            <h4>Level 3 Award in Heat Pump Systems</h4>
+            <p>Covering air source and ground source heat pump installation and commissioning, aligned with MCS standards.</p>
+            <a href="#" class="qual-link">View qualification</a>
+          </div>
+          <div class="qual-card">
+            <span class="qual-tag">Heating</span>
+            <h4>Level 3 Award in Domestic Heating Design</h4>
+            <p>Heat loss calculation and heating system design qualification for engineers and system designers working in residential properties.</p>
+            <a href="#" class="qual-link">View qualification</a>
+          </div>
+          <div class="qual-card">
+            <span class="qual-tag">Refrigeration</span>
+            <h4>F-Gas Category I Qualification</h4>
+            <p>Category I F-Gas certification for engineers working on refrigeration, air conditioning and heat pump equipment containing fluorinated gases.</p>
+            <a href="#" class="qual-link">View qualification</a>
+          </div>
+          <div class="qual-card">
+            <span class="qual-tag">Plumbing</span>
+            <h4>Level 2 Award in Unvented Hot Water Systems</h4>
+            <p>Qualification covering the installation, commissioning and maintenance of unvented hot water storage systems.</p>
+            <a href="#" class="qual-link">View qualification</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <div class="carousel-dots" id="carouselDots"></div>
+        <span class="carousel-count" id="carouselCount"></span>
+        <div class="carousel-arrows">
+          <div class="carousel-arrow" id="prevArrow">&#8592;</div>
+          <div class="carousel-arrow" id="nextArrow">&#8594;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const dotsEl = document.getElementById('carouselDots');
+    const countEl = document.getElementById('carouselCount');
+    const cards = track.querySelectorAll('.qual-card');
+    let current = 0;
+
+    function visibleCount() {
+      return window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+    }
+
+    function totalSlides() {
+      return Math.ceil(cards.length / visibleCount());
+    }
+
+    function buildDots() {
+      dotsEl.innerHTML = '';
+      for (let i = 0; i < totalSlides(); i++) {
+        const d = document.createElement('div');
+        d.className = 'carousel-dot' + (i === current ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(d);
+      }
+    }
+
+    function goTo(idx) {
+      const total = totalSlides();
+      current = Math.max(0, Math.min(idx, total - 1));
+      const vc = visibleCount();
+      const cardWidth = track.parentElement.offsetWidth;
+      const gap = 17.6; // ~1.1rem
+      const stepWidth = (cardWidth + gap) / vc;
+      track.style.transform = `translateX(-${current * vc * stepWidth}px)`;
+      buildDots();
+      countEl.textContent = `${current + 1} / ${total}`;
+    }
+
+    document.getElementById('prevArrow').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('nextArrow').addEventListener('click', () => goTo(current + 1));
+    window.addEventListener('resize', () => { current = 0; buildDots(); goTo(0); });
+
+    buildDots();
+    countEl.textContent = `1 / ${totalSlides()}`;
+  })();
+</script>
+
+<!-- ══ CENTRES ══ -->
+<section class="centres-block">
+  <div class="container">
+    <div class="centres-inner">
+      <div class="section-eyebrow" style="color:#888;">For Training Centres</div>
+      <h2 class="section-title section-title--light">Partner with a trusted awarding organisation</h2>
+      <p style="color:#888; font-size:0.9rem; line-height:1.75; margin-bottom:0;">Join LCL Awards' network of approved centres and offer industry-recognised qualifications to your learners, backed by a responsive awarding organisation with decades of sector expertise.</p>
+      <div class="benefit-tiles">
+        <div class="benefit-tile"><div class="check">✓</div><p>Access to a comprehensive qualification portfolio</p></div>
+        <div class="benefit-tile"><div class="check">✓</div><p>Certification and assessment services</p></div>
+        <div class="benefit-tile"><div class="check">✓</div><p>Centre support and quality assurance frameworks</p></div>
+        <div class="benefit-tile"><div class="check">✓</div><p>Industry demand across all key BSE sectors</p></div>
+        <div class="benefit-tile"><div class="check">✓</div><p>National recognition and regulatory compliance</p></div>
+      </div>
+      <div class="btn-row">
+        <a href="#" class="btn btn-primary btn-lg">Become an Approved Centre</a>
+        <a href="#" class="btn btn-secondary btn-lg">Explore centre support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPLORE FURTHER ══ -->
+<section class="section links-block">
+  <div class="container">
+    <div class="section-eyebrow">Explore Further</div>
+    <h2 class="section-title">Useful resources &amp; sections</h2>
+    <div class="links-grid">
+      <a href="#" class="link-tile">
+        <div class="link-tile-icon"></div>
+        <div class="link-tile-title">Learner Zone</div>
+        <div class="link-tile-desc">Guidance, FAQs and resources for individuals studying for an LCL Awards qualification.</div>
+      </a>
+      <a href="#" class="link-tile">
+        <div class="link-tile-icon"></div>
+        <div class="link-tile-title">Centre Zone</div>
+        <div class="link-tile-desc">Information and support resources for LCL Awards approved training centres.</div>
+      </a>
+      <a href="#" class="link-tile">
+        <div class="link-tile-icon"></div>
+        <div class="link-tile-title">Find a Training Centre</div>
+        <div class="link-tile-desc">Search for approved LCL Awards centres by location, sector or qualification type.</div>
+      </a>
+      <a href="#" class="link-tile">
+        <div class="link-tile-icon"></div>
+        <div class="link-tile-title">News</div>
+        <div class="link-tile-desc">Industry guidance, qualification updates and sector news from LCL Awards.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section faq-block">
+  <div class="container">
+    <div class="section-eyebrow">Frequently Asked Questions</div>
+    <h2 class="section-title">Common questions about LCL Awards qualifications</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>What is an LCL Awards qualification?</h4>
+        <p>LCL Awards qualifications are nationally recognised certificates awarded to individuals who have demonstrated competence in a specific building services engineering skill or trade, assessed and certified by LCL Awards as a regulated awarding organisation.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Are LCL Awards qualifications recognised by employers and industry bodies?</h4>
+        <p>Yes. LCL Awards is regulated by Ofqual, Qualifications Wales and CCEA Regulation, and UKAS accredited. Qualifications are recognised by Gas Safe Register, MCS, Part P schemes and other relevant industry licensing bodies.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do I take an LCL Awards qualification?</h4>
+        <p>All LCL Awards qualifications are delivered through our network of approved training centres. You enrol and undertake training directly with a centre, which then submits your assessment results to LCL Awards for certification.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Where can I find a training centre near me?</h4>
+        <p>Use the LCL Awards approved centre finder to search by location and sector. With over 160 approved centres across England, Wales and Northern Ireland, you can find training close to where you live or work.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What industries do LCL Awards qualifications cover?</h4>
+        <p>LCL Awards covers the full building services engineering sector including gas (domestic and commercial), electrical installation, plumbing, heating, renewable energy, refrigeration, F-Gas, smart metering, oil firing, solid fuel and biomass.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How can my organisation become an approved LCL Awards training centre?</h4>
+        <p>Training providers can apply to become an LCL Awards approved centre by contacting our centre approval team. You'll be guided through the approval process, quality assurance requirements and the support available to deliver our qualifications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="final-cta">
+  <h2>Ready to take the next step?</h2>
+  <p>Whether you're starting your career, updating your qualifications or building your training centre provision — LCL Awards has a pathway for you.</p>
+  <div class="final-btns">
+    <a href="#" class="btn btn-primary btn-lg">Browse our qualifications</a>
+    <a href="#" class="btn btn-secondary btn-lg">Find a training centre</a>
+    <a href="#" class="btn btn-secondary btn-lg">Become an Approved Centre</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div style="width:60px; height:60px; background:#555; border:2px dashed #888; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:700; color:#999; letter-spacing:0.04em; margin:0 auto 1.5rem;">LOGO</div>
+    <div class="footer-contact">
+      <a href="#">Tel: 020 8839 2439</a>
+      <a href="#" class="email">enquiries@LCLawards.co.uk</a>
+    </div>
+    <nav class="footer-nav">
+      <a href="#">Learner Zone</a>
+      <a href="#">Centre Zone</a>
+      <a href="#">Qualifications</a>
+      <a href="#">Contact Us</a>
+    </nav>
+    <div class="footer-address">
+      <p>LCL Awards, Unit 1, Belvue Business Centre, Belvue Road, Northolt, Middlesex, UB5 5QQ</p>
+      <p>LCL Awards is a trading name of Logic Certification Ltd. Registered in England. Company No: 4615993</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      <div class="footer-cookie-icon">●</div>
+      <span>Copyright © LCL Awards 2026. All rights reserved</span>
+    </div>
+    <div class="footer-bottom-right">
+      <a href="#">Te
